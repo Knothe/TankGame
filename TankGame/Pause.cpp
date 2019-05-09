@@ -26,6 +26,10 @@ void Pause::Init()
 	std::cout << "Pause Init";
 }
 
+void Pause::Close()
+{
+	std::cout << "Pause close";
+}
 
 Pause::~Pause()
 {

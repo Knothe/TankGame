@@ -25,6 +25,11 @@ void Game::Init()
 	std::cout << "Game Init";
 }
 
+void Game::Close()
+{
+	std::cout << "Game close";
+}
+
 Game::~Game()
 {
 }

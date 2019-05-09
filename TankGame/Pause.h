@@ -9,6 +9,7 @@ public:
 	void Update() override;
 	void Draw() override;
 	void Init() override;
+	void Close() override;
 	~Pause();
 };
 

@@ -27,7 +27,10 @@ void Configuration::Init()
 	std::cout << "Configuration Init";
 }
 
-
+void Configuration::Close()
+{
+	std::cout << "Configuration close";
+}
 
 Configuration::~Configuration()
 {

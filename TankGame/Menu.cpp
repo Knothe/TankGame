@@ -26,6 +26,11 @@ void Menu::Init()
 	std::cout << "Menu Init";
 }
 
+void Menu::Close()
+{
+	std::cout << "Menu close";
+}
+
 
 Menu::~Menu()
 {
