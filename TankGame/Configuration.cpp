@@ -22,7 +22,7 @@ void Configuration::Draw()
 	std::cout << "Configuration Draw";
 }
 
-void Configuration::Init()
+void Configuration::Init(Platform * platform)
 {
 	std::cout << "Configuration Init";
 }

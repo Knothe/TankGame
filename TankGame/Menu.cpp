@@ -19,11 +19,17 @@ void Menu::Update()
 void Menu::Draw()
 {
 	std::cout << "Menu Draw";
+	platform->RenderClear();
+	platform->RenderImage(background, 0, 0);
+	platform->RenderPresent();
 }
 
-void Menu::Init()
+void Menu::Init(Platform * platform)
 {
 	std::cout << "Menu Init";
+	this->platform = platform;
+	background = new Image();
+	background->LoadImage("../Assets/Images/background.jpg");
 }
 
 void Menu::Close()

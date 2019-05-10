@@ -9,7 +9,7 @@ StateManager::StateManager()
 
 void StateManager::SetState(GameState *state)
 {
-	state->Init();
+	state->Init(platform);
 	states.push(state);
 }
 

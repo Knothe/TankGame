@@ -20,7 +20,7 @@ void Game::Draw()
 	std::cout << "Game Draw";
 }
 
-void Game::Init()
+void Game::Init(Platform * platform)
 {
 	std::cout << "Game Init";
 }

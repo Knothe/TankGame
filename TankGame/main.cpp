@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 	
 	std::cout << "Si inicia";
 	StateManager stateM;
-	//stateM.SetState(new Menu());
+	stateM.SetState(new Menu());
 	stateM.GameLoop();
 
 	return 0;

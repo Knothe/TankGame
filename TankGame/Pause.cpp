@@ -21,7 +21,7 @@ void Pause::Draw()
 	std::cout << "Pause Draw";
 }
 
-void Pause::Init()
+void Pause::Init(Platform * platform)
 {
 	std::cout << "Pause Init";
 }

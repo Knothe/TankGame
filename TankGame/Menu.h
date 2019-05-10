@@ -1,14 +1,19 @@
 #pragma once
 #include "GameState.h"
+#include "Image.h"
 
 class Menu : public GameState
 {
+private:
+	Image *background;
+	Platform *platform;
+
 public:
 	Menu();
 	void Input() override;
 	void Update() override;
 	void Draw() override;
-	void Init() override;
+	void Init(Platform * platform) override;
 	void Close() override;
 	~Menu();
 };
