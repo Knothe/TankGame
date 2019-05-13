@@ -6,9 +6,10 @@ Menu::Menu()
 {
 }
 
-void Menu::Input()
+bool Menu::Input(int keyInput)
 {
 	std::cout << "Menu Input";
+	return false;
 }
 
 void Menu::Update()

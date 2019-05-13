@@ -6,9 +6,10 @@ Pause::Pause()
 {
 }
 
-void Pause::Input()
+bool Pause::Input(int keyInput)
 {
 	std::cout << "Pause Input";
+	return false;
 }
 
 void Pause::Update()

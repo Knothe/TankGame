@@ -2,6 +2,9 @@
 #include <string>
 #include "SDL.h"
 #include "Image.h"
+#include "GameState.h"
+
+class GameState;
 
 class Platform
 {
@@ -18,7 +21,7 @@ public:
 	void RenderClear();
 	void RenderPresent();
 	void RenderImage(Image *image, int x, int y);
-	
+	void CheckEvent(GameState *obj, bool (GameState::*f)(int));
 	
 private:
 	void RenderTexture(Image *image, int x, int y, double angle);

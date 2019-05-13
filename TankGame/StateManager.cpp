@@ -24,7 +24,7 @@ void StateManager::GameLoop()
 				throw std::exception("Error");
 			}
 			auto estado = states.top();
-			estado->Input();
+			platform->CheckEvent(estado, &GameState::Input);
 			estado->Update();
 			estado->Draw();
 			

@@ -59,3 +59,15 @@ void Platform::RenderTexture(Image *image, int x, int y, double angle)
 Platform::~Platform()
 {
 }
+
+void Platform::CheckEvent(GameState *obj, bool (GameState::*f)(int))
+{
+	SDL_Event e;
+	while (SDL_PollEvent(&e)) //El & sirve para obtener la dirección de memoria
+	{
+		if (e.type == SDL_KEYDOWN)
+		{
+			(obj->*f)(e.key.keysym.sym);
+		}
+	}
+}
