@@ -1,93 +1,54 @@
 #include "Tank.h"
-
-
+#include <iostream>
+#include <math.h>
 
 Tank::Tank()
 {
 }
 
-void Tank::SetLife(int life)
-{
-
-}
-
-int Tank::GetLife()
-{
-	return life;
-}
-void Tank::SetMoveSpeed(int speed)
-{
-
-}
-
-float Tank::GetMoveSpeed()
-{
-	return moveSpeed;
-}
-
-void Tank::SetRotationSpeed(int speed)
-{
-
-}
-
-float Tank::GetRotationSpeed()
-{
-	return rotationSpeed;
-}
-
-void Tank::SetPoints(int points)
-{
-
-}
-
-int Tank::GetPoints()
-{
-	return points;
-}
-
-void Tank::SetStunTime(float stunTime)
-{
-
-}
-
-float Tank::GetStunTime()
-{
-	return stunTime;
-}
-
-void Tank::SetRotation(float rotation)
+void Tank::Update()
 {
 	
 }
 
-float Tank::GetRotation()
+void Tank::Input(int input)
 {
-	return rotation;
+	std::cout << input << std::endl;
+	if (input == 1073741903) 
+	{
+		angle+=angleSpeed;
+	}
+	else if (input == 1073741904) 
+	{
+		angle-=angleSpeed;
+	}
+	else if (input == 1073741905) 
+	{
+		x -= (int)(sin(angle*M_PI / 180) * speed);
+		y += (int)(cos(angle*M_PI / 180) * speed);
+	}
+ 	else if (input == 1073741906) 
+	{
+		x += (int)(sin(angle*M_PI / 180) * speed);
+		y -= (int)(cos(angle*M_PI / 180) * speed);
+	}
 }
 
-void Tank::SetAlive(bool isAlive)
+void Tank::Draw()
 {
-
+	platform->RenderImage(image, x, y, angle);
 }
 
-bool Tank::GetAlive()
+void Tank::Init(Platform *platform)
 {
-	return true;
-}
-
-void Tank::Shoot()
-{
-
-}
-
-void Tank::Move()
-{
-
-}
-
-bool Tank::GetHit()
-{
-	return true;
+	this->platform = platform;
+	image = new Image();
+	image->LoadImage("../Assets/Images/tank1.png");
+	x = 100;
+	y = 100;
+	angle = 0;
+	angleSpeed = 10;
+	speed = 5;
 }
 
 

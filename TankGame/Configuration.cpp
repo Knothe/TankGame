@@ -23,7 +23,7 @@ void Configuration::Draw()
 	std::cout << "Configuration Draw";
 }
 
-void Configuration::Init(Platform * platform)
+void Configuration::Init(Platform * platform, StateManager *stateManager)
 {
 	std::cout << "Configuration Init";
 }

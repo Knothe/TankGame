@@ -51,9 +51,20 @@ void Platform::RenderImage(Image *image, int x, int y)
 	RenderTexture(image, x, y, 0);
 }
 
+void Platform::RenderImage(Image *image, int x, int y, double angle) 
+{
+	RenderTexture(image, x, y, angle);
+}
+
 void Platform::RenderTexture(Image *image, int x, int y, double angle)
 {
-	SDL_RenderCopyEx(renderer, image->GetTexture(), NULL, NULL, 0, NULL, SDL_FLIP_NONE);
+	SDL_Rect srcrect;
+	srcrect.x = x;
+	srcrect.y = y;
+	srcrect.w = image->GetWdith();
+	srcrect.h = image->GetHeight();
+	SDL_RenderCopyEx(renderer, image->GetTexture(), NULL, &srcrect
+		, angle, NULL, SDL_FLIP_NONE);
 }
 
 Platform::~Platform()

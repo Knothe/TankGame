@@ -21,6 +21,8 @@ public:
 	void RenderClear();
 	void RenderPresent();
 	void RenderImage(Image *image, int x, int y);
+	void RenderImage(Image *image, int x, int y, double angle);
+
 	void CheckEvent(GameState *obj, bool (GameState::*f)(int));
 	
 private:

@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Platform.h"
 
+
 StateManager::StateManager()
 {
 	platform = new Platform("Tank");
@@ -9,7 +10,7 @@ StateManager::StateManager()
 
 void StateManager::SetState(GameState *state)
 {
-	state->Init(platform);
+	state->Init(platform, this);
 	states.push(state);
 }
 
