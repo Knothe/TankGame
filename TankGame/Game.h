@@ -3,15 +3,16 @@
 #include "StateManager.h"
 #include "Image.h"
 #include "Tank.h"
+#include "EnemyHeavyT.h"
+#include "EnemyLightT.h"
 
 class Game : public GameState
 {
 private:
 	Platform *platform;
-	Image *playerImage;
-	int playerX;
-	int playerY;
 	Tank *player;
+	EnemyHeavyT *enemy1;
+	EnemyLightT *enemy2;
 public:
 	Game();
 	bool Input(int keyInput) override;

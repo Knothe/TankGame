@@ -20,6 +20,8 @@ void Game::Draw()
 {
 	platform->RenderClear();
 	player->Draw();
+	enemy1->Draw();
+	enemy2->Draw();
 	platform->RenderPresent();
 	//std::cout << "Game Draw";
 }
@@ -27,12 +29,15 @@ void Game::Draw()
 void Game::Init(Platform * platform, StateManager *stateManager)
 {
 	this->platform = platform;
-	playerImage = new Image();
-	playerImage->LoadImage("../Assets/Images/tank1.png");
-	playerX = 50;
-	playerY = 50;
 	player = new Tank();
 	player->Init(platform);
+
+	enemy1 = new EnemyHeavyT();
+	enemy1->Init(platform);
+
+	enemy2 = new EnemyLightT();
+	enemy2->Init(platform, 400, 200, 90);
+
 	std::cout << "Game Init";
 }
 
