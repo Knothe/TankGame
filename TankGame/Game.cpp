@@ -103,7 +103,7 @@ void Game::CheckBulletCollision(std::list<GameObject *> *bulletPool)
 	}
 
 	for (auto num : it)
-	{x|
+	{
 		bulletPool->erase(num);
 	}
 }
