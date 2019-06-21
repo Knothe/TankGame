@@ -4,11 +4,14 @@
 
 EnemyLightT::EnemyLightT()
 {
+	position = Vector(400, 200);
+	angle = 90;
+	radius = 50;
 }
 
 void EnemyLightT::Draw()
 {
-	platform->RenderImage(image, x, y, angle);
+	platform->RenderImage(image, position, angle);
 }
 
 void EnemyLightT::Init(Platform *platform)
@@ -16,9 +19,9 @@ void EnemyLightT::Init(Platform *platform)
 	this->platform = platform;
 	image = new Image();
 	image->LoadImage("../Assets/Images/lightTank.png");
-	x = 400;
-	y = 200;
-	angle = 90;
+	
+	centerInGame = Vector(image->GetWidth(), image->GetHeight());
+	center = position + centerInGame;
 }
 
 void EnemyLightT::Init(Platform *platform, int x, int y, float angle)
@@ -26,19 +29,41 @@ void EnemyLightT::Init(Platform *platform, int x, int y, float angle)
 	this->platform = platform;
 	image = new Image();
 	image->LoadImage("../Assets/Images/lightTank.png");
-	this->x = x;
-	this->y = y;
+	position = Vector(x, y);
 	this->angle = angle;
+	radius = 2;
+	centerInGame = Vector(image->GetWidth(), image->GetHeight());
+	center = position + centerInGame;
 }
 
-void EnemyLightT::Input(int input)
+float EnemyLightT::GetRadius() 
 {
+	return radius;
+}
 
+int EnemyLightT::GetPosX()
+{
+	return position.GetX();
+}
+
+int EnemyLightT::GetPosY()
+{
+	return position.GetY();
+}
+
+Vector EnemyLightT::GetPosition()
+{
+	return position;
 }
 
 void EnemyLightT::Update()
 {
+	center = position + centerInGame;
+}
 
+Vector EnemyLightT::GetCenter()
+{
+	return centerInGame;
 }
 
 EnemyLightT::~EnemyLightT()

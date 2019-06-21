@@ -17,7 +17,7 @@ SDL_Texture *Image::GetTexture()
 	return image;
 }
 
-int Image::GetWdith()
+int Image::GetWidth()
 {
 	return w;
 }

@@ -12,5 +12,6 @@ int main(int argc, char *argv[])
 	stateM.SetState(new Menu());
 	stateM.GameLoop();
 
+
 	return 0;
 }

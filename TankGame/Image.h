@@ -13,7 +13,7 @@ private:
 public:
 	void LoadImage(std::string name);
 	SDL_Texture *GetTexture();
-	int GetWdith();
+	int GetWidth();
 	int GetHeight();
 
 };

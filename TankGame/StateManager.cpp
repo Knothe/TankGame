@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Platform.h"
 
+static SDL_Event gameEvent;
 
 StateManager::StateManager()
 {
@@ -25,9 +26,15 @@ void StateManager::GameLoop()
 				throw std::exception("Error");
 			}
 			auto estado = states.top();
+			
 			platform->CheckEvent(estado, &GameState::Input);
 			estado->Update();
 			estado->Draw();
+
+			if (!estado->GetState())
+			{
+				ReleaseState();
+			}
 			
 		}
 		catch (...) 
